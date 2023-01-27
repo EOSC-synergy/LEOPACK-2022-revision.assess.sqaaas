@@ -1,0 +1,46 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.8
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/stevenjgibbons/LEOPACK-2022-revision:
+      branch: main
+      repo: https://github.com/stevenjgibbons/LEOPACK-2022-revision
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/stevenjgibbons/LEOPACK-2022-revision git:
+        commands:
+        - /usr/bin/env sh .sqa/script.droopy-cerulean-capuchin.sh
+        container: qc.acc_wimpy-wheat-chihuahua
+  QC.Doc:
+    repos:
+      github.com/stevenjgibbons/LEOPACK-2022-revision find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.bluesy-pear-hedgehog.sh
+        container: qc.doc_sunny-lilac-cattle
+      github.com/stevenjgibbons/LEOPACK-2022-revision git:
+        commands:
+        - /usr/bin/env sh .sqa/script.baggy-seashell-barracuda.sh
+        container: qc.doc_ugly-thistle-termite
+      github.com/stevenjgibbons/LEOPACK-2022-revision markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.freaky-linen-gar.sh
+        container: qc.doc_homely-violet-javanese
+  QC.Lic:
+    repos:
+      github.com/stevenjgibbons/LEOPACK-2022-revision licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.woolly-pink-cougar.sh
+        container: qc.lic_cloudy-lime-whippet
+  QC.Ver:
+    repos:
+      github.com/stevenjgibbons/LEOPACK-2022-revision get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-white-angora.sh
+        container: qc.ver_snazzy-cyan-badger
+timeout: 5400
