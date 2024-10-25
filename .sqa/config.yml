@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.9
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/stevenjgibbons/LEOPACK-2022-revision:
       branch: main
@@ -15,38 +15,44 @@ sqa_criteria:
     repos:
       github.com/stevenjgibbons/LEOPACK-2022-revision git:
         commands:
-        - /usr/bin/env sh .sqa/script.pasty-ecru-newfoundland.sh
-        container: qc.acc_sleazy-lilac-birman
+        - /usr/bin/env sh .sqa/script.woolly-gamboge-alligator.sh
+        container: qc.acc_paltry-burgundy-dollar
   QC.Doc:
     repos:
       github.com/stevenjgibbons/LEOPACK-2022-revision find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.nerdy-flax-sparrow.sh
-        container: qc.doc_cloudy-apricot-anteater
+        - /usr/bin/env sh .sqa/script.shabby-copper-lionfish.sh
+        container: qc.doc_clammy-gold-wallaby
       github.com/stevenjgibbons/LEOPACK-2022-revision git:
         commands:
-        - /usr/bin/env sh .sqa/script.stuffy-gold-toucan.sh
-        container: qc.doc_trippy-flax-turtle
+        - /usr/bin/env sh .sqa/script.crappy-ultramarine-numbat.sh
+        container: qc.doc_beady-mauve-gecko
       github.com/stevenjgibbons/LEOPACK-2022-revision markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-chestnut-hippopotamus.sh
-        container: qc.doc_cranky-amaranth-lobster
+        - /usr/bin/env sh .sqa/script.leaky-xanthic-lemming.sh
+        container: qc.doc_hazy-eggplant-goat
   QC.Lic:
     repos:
       github.com/stevenjgibbons/LEOPACK-2022-revision licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.hazy-khaki-hornet.sh
-        container: qc.lic_sloppy-tomato-quokka
+        - /usr/bin/env sh .sqa/script.jumpy-charcoal-dolphin.sh
+        container: qc.lic_bluesy-ochre-guppy
   QC.Met:
     repos:
       github.com/stevenjgibbons/LEOPACK-2022-revision cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-buff-caiman.sh
-        container: qc.met_zippy-periwinkle-emu
+        - /usr/bin/env sh .sqa/script.squirrely-tangerine-worm.sh
+        container: qc.met_pretty-brass-mist
+  QC.Sty:
+    repos:
+      github.com/stevenjgibbons/LEOPACK-2022-revision oclint:
+        commands:
+        - /usr/bin/env sh .sqa/script.grumpy-tan-balinese.sh
+        container: qc.sty_scummy-lime-kiwi
   QC.Ver:
     repos:
       github.com/stevenjgibbons/LEOPACK-2022-revision get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.bluesy-azure-flamingo.sh
-        container: qc.ver_gimpy-jade-lionfish
+        - /usr/bin/env sh .sqa/script.slaphappy-pumpkin-dachsbracke.sh
+        container: qc.ver_flimsy-gamboge-abyssinian
 timeout: 5400
